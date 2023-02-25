@@ -1,0 +1,14 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethereumjs-tx": "^2.1.2",
+    "web3": "^1.8.2",
+    "web3-eth-accounts": "^1.8.2",
+    "web3-eth-contract": "^1.8.2"
+  }
+}

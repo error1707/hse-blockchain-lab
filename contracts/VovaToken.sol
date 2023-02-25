@@ -19,6 +19,27 @@ interface IERC20 {
 
 contract VovaToken is IERC20 {
 
+    struct student {
+       string name;
+       int age;
+       bool isMale;
+    }
+
+    mapping(string => student) studentMapping;
+
+    event StudentAdded(string name, int age, bool isMale);
+    event StudentDeleted(string name);
+
+    function addToStudent(string memory studentName, int age, bool isMale) public {
+        studentMapping[studentName] = student(studentName, age, isMale);
+        emit StudentAdded(studentName, age, isMale);
+    }
+
+    function delFromStudent(string memory studentName) public {
+        delete studentMapping[studentName];
+        emit StudentDeleted(studentName);
+    }
+
     string public constant name = "VovaToken";
     uint8 public constant decimals = 18;
 
